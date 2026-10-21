@@ -1,0 +1,69 @@
+body {
+    font-family: "Times New Roman", serif;
+    margin: 20px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.nav {                          /* панель вертикального меню */
+    width: 200px;
+    background: linear-gradient(to bottom, #e1e1e1, rgb(208, 208, 208));
+    border-radius: 4px;
+    box-shadow: 5px 3px rgb(165, 165, 165);
+}
+
+.nav .pt {                      /* пункты основного меню */
+    display: block;             /* пункты идут друг под другом */
+    background: linear-gradient(to bottom, #e3e3e3, rgb(239, 239, 239));
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    border-style: solid;
+    border-width: 0 0.5px 0 0;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 1px 0;
+}
+
+.nav .pt:hover {
+    background: linear-gradient(to bottom, rgb(204, 204, 204), rgb(145, 145, 145));
+}
+
+.nav div {                      /* пункт, содержащий подменю */
+    position: relative;         /* подменю .drop позиционируется относительно него */
+}
+
+.nav div .drop {                /* подменю */
+    position: absolute;
+    display: none;
+    top: 0;                     /* на уровне своего пункта */
+    left: 100%;                 /* справа от меню */
+    width: 140px;
+}
+
+.drop_item {                    /* пункты подменю */
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+    background: linear-gradient(to bottom, #e3e3e3, rgb(239, 239, 239));
+    border-style: solid;
+    border-width: 0 0.5px 0 0;
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin: 0 0 1px 3px;
+}
+
+.drop_item:hover {
+    background: linear-gradient(to bottom, rgb(204, 204, 204), rgb(145, 145, 145));
+}
+
+.nav div:hover .drop {          /* показываем подменю при наведении */
+    display: block;
+}

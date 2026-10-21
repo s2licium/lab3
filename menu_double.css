@@ -1,0 +1,74 @@
+body {
+    font-family: "Times New Roman", serif;
+    margin: 20px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.nav {                          /* панель вертикального меню */
+    width: 200px;
+    background: linear-gradient(to bottom, #e1e1e1, rgb(208, 208, 208));
+    border-radius: 4px;
+    box-shadow: 5px 3px rgb(165, 165, 165);
+}
+
+.nav .pt {                      /* пункты основного меню */
+    display: block;
+    background: linear-gradient(to bottom, #e3e3e3, rgb(239, 239, 239));
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    border-style: solid;
+    border-width: 0 0.5px 0 0;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 1px 0;
+}
+
+.item {                         /* любой пункт, у которого есть подменю */
+    position: relative;         /* его подменю позиционируется относительно него */
+}
+
+.drop {                         /* подменю (любого уровня) */
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 100%;                 /* открывается справа от родительского пункта */
+    width: 170px;
+}
+
+.drop_item {                    /* пункты подменю */
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+    background: linear-gradient(to bottom, #e3e3e3, rgb(239, 239, 239));
+    border-style: solid;
+    border-width: 0 0.5px 0 0;
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin: 0 0 1px 3px;
+}
+
+.drop_item.more::after {        /* стрелка у пунктов, которые раскрываются дальше */
+    content: " \25B8";
+}
+
+.nav .pt:hover,
+.drop_item:hover,
+.item:hover > .pt,              /* родительский пункт остаётся подсвеченным, */
+.item:hover > .drop_item {      /* пока открыто его подменю */
+    background: linear-gradient(to bottom, rgb(204, 204, 204), rgb(145, 145, 145));
+}
+
+/* Показываем ТОЛЬКО непосредственное подменю наведённого пункта (селектор >),
+   поэтому второй уровень открывается лишь при наведении на свой пункт */
+.item:hover > .drop {
+    display: block;
+}

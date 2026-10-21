@@ -1,0 +1,209 @@
+/* ===== Общие стили ===== */
+body {
+    margin: 6px;
+    font-family: "Times New Roman", serif;
+    font-size: 18px;
+    background-color: #fff;
+}
+
+/* ===== Шапка ===== */
+.header {
+    background: linear-gradient(to right, #e3f0fc, #a8d4f5);
+    color: red;
+    font-family: Verdana, Arial, sans-serif;
+    font-style: italic;
+    font-size: 64px;
+    text-align: center;
+    padding: 6px 0;
+    margin-bottom: 10px;
+}
+
+/* ===== Горизонтальное меню ===== */
+.nav {
+    background: linear-gradient(to bottom, #e3f0fc, #a8d4f5);
+    border-radius: 4px;
+    min-height: 50px;
+    box-shadow: 5px 3px rgb(140, 140, 140);
+    margin-bottom: 12px;
+}
+
+.nav::after {                   /* панель растягивается по высоте плавающих пунктов,
+                                   даже если они перенеслись на вторую строку */
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.nav .pt {
+    background: linear-gradient(to bottom, #f4f4f4, #e3e3e3);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+    display: block;
+    float: left;                /* пункты меню в одну строку */
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    border-color: #555;
+    border-radius: 4px;
+    padding: 14px 35px;
+    margin: 0 1px;
+}
+
+.nav .pt:hover {
+    background: linear-gradient(to bottom, #cccccc, #919191);
+}
+
+.nav div {                      /* пункт с выпадающим списком */
+    float: left;
+    position: relative;
+}
+
+.nav div .drop {                /* выпадающий список */
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.drop_item {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background: linear-gradient(to bottom, #f4f4f4, #e3e3e3);
+    border-radius: 4px;
+    padding: 12px 10px;
+    margin-top: 1px;
+}
+
+.drop_item:hover {
+    background: linear-gradient(to bottom, #cccccc, #919191);
+}
+
+.nav div:hover .drop {
+    display: block;
+}
+
+/* ===== Колонки ===== */
+.left,
+.right,
+.center {
+    background: linear-gradient(to bottom, #e3f0fc, #a8d4f5);
+    border-radius: 4px;
+    box-shadow: 4px 4px rgb(110, 110, 110);
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.left {
+    float: left;                /* левая колонка */
+    width: 150px;
+    margin-right: 14px;         /* зазор до центральной колонки */
+}
+
+.right {
+    float: right;               /* правая колонка */
+    width: 150px;
+    margin-left: 14px;
+}
+
+.center {
+    overflow: hidden;           /* центральная колонка — обычный блок; overflow: hidden
+                                   не даёт ей заезжать под плавающие колонки */
+}
+
+/* Блоки внутри боковых колонок */
+.box {
+    background-color: #eef6fd;
+    border-radius: 8px;
+    box-shadow: 4px 4px rgb(110, 110, 110);
+    padding: 6px 8px 8px;
+    margin-bottom: 12px;
+}
+
+.box:last-child {
+    margin-bottom: 0;
+}
+
+.box-title {
+    background-color: #8ecdf3;
+    border-radius: 12px;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 0 6px;
+    padding: 1px 0;
+}
+
+.box-text {
+    margin: 0;
+    text-align: justify;
+}
+
+.box-list {
+    margin: 0;
+    padding-left: 22px;
+}
+
+/* ===== Плитки в центральной колонке с наплывающим пояснением ===== */
+.base {
+    position: relative;         /* .layer позиционируется относительно этого блока */
+    display: inline-block;      /* плитки выстраиваются в строку и переносятся при сужении окна */
+    vertical-align: top;
+    width: 120px;
+    height: 120px;
+    margin: 8px;
+    border: 4px solid #fff;
+    border-radius: 4px;
+    box-shadow: 4px 4px 6px rgb(110, 110, 110);
+    overflow: hidden;           /* не показываем то, что выходит за границы блока */
+}
+
+.base img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.layer {                        /* наплывающий блок */
+    position: absolute;
+    top: 0;
+    left: -100%;                /* изначально спрятан слева */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 60, 120, 0.6);
+    color: #fff;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: left .3s;       /* плавное появление */
+}
+
+.layer span {                   /* текст по центру блока */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 6px;
+}
+
+.base:hover .layer {
+    left: 0;                    /* при наведении блок наплывает */
+}
+
+/* ===== Узкие экраны ===== */
+@media (max-width: 1000px) {
+    .nav .pt { padding: 14px 18px; font-size: 16px; }
+}
+
+@media (max-width: 700px) {
+    .header { font-size: 40px; }
+    .nav .pt { padding: 10px 12px; font-size: 14px; }
+}

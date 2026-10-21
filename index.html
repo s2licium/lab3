@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Studio — трёхколоночный макет</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка -->
+    <div class="header">WEB STUDIO</div>
+
+    <!-- Горизонтальное меню -->
+    <div class="nav">
+        <a class="pt" href="index.html">Главная</a>
+        <a class="pt" href="index.html">Отделы продаж</a>
+        <div>
+            <a class="pt" href="index.html">Поставщики</a>
+            <div class="drop">
+                <a class="drop_item" href="index.html">ООО "Дизайн"</a>
+                <a class="drop_item" href="index.html">ООО "Арт"</a>
+                <a class="drop_item" href="index.html">ООО "Фотостиль"</a>
+            </div>
+        </div>
+        <a class="pt" href="index.html">Контакты</a>
+        <a class="pt" href="index.html">О нас</a>
+    </div>
+
+    <!-- Сначала левый и правый блоки, ЗАТЕМ центральный -->
+
+    <!-- Левая колонка (float: left) -->
+    <div class="left">
+        <div class="box">
+            <h3 class="box-title">Новости</h3>
+            <p class="box-text">
+                Наша студия запустила новое направление — разработку мобильных
+                приложений для iOS и Android. Первым десяти клиентам — скидка 15%
+                на дизайн интерфейса. Также мы обновили портфолио и добавили
+                в него проекты для образовательных и медицинских организаций.
+            </p>
+        </div>
+    </div>
+
+    <!-- Правая колонка (float: right) -->
+    <div class="right">
+        <div class="box">
+            <h3 class="box-title">Контакты</h3>
+            <p class="box-text">
+                <b>Адрес:</b> г. Москва, ул. Академика Королёва, 12<br>
+                <b>Телефон:</b> 8-999-999-99-99
+            </p>
+        </div>
+        <div class="box">
+            <h3 class="box-title">Услуги</h3>
+            <ul class="box-list">
+                <li>Разработка дизайна</li>
+                <li>Разработка web-приложений</li>
+                <li>Разработка web-сервисов</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Центральная колонка (обычный блок, overflow: hidden) -->
+    <div class="center">
+        <div class="base">
+            <img src="img/design.png" alt="Дизайн">
+            <a href="index.html" class="layer"><span>Дизайн</span></a>
+        </div>
+        <div class="base">
+            <img src="img/code.png" alt="Вёрстка">
+            <a href="index.html" class="layer"><span>Вёрстка и код</span></a>
+        </div>
+        <div class="base">
+            <img src="img/analytics.png" alt="Аналитика">
+            <a href="index.html" class="layer"><span>Аналитика</span></a>
+        </div>
+        <div class="base">
+            <img src="img/mobile.png" alt="Мобильные приложения">
+            <a href="index.html" class="layer"><span>Мобильные приложения</span></a>
+        </div>
+        <div class="base">
+            <img src="img/cloud.png" alt="Облачный хостинг">
+            <a href="index.html" class="layer"><span>Облачный хостинг</span></a>
+        </div>
+        <div class="base">
+            <img src="img/security.png" alt="Безопасность">
+            <a href="index.html" class="layer"><span>Безопасность</span></a>
+        </div>
+        <div class="base">
+            <img src="img/mail.png" alt="Email-рассылки">
+            <a href="index.html" class="layer"><span>Email-рассылки</span></a>
+        </div>
+        <div class="base">
+            <img src="img/support.png" alt="Поддержка">
+            <a href="index.html" class="layer"><span>Поддержка 24/7</span></a>
+        </div>
+    </div>
+
+</body>
+</html>
